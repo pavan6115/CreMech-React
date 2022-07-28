@@ -1,0 +1,33 @@
+.header {
+    margin-top: 3rem;
+}
+
+.nav__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.nav__title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.nav__user__icons {
+    width: 15em;
+    display: flex;
+    justify-content: space-around;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.nav__icon {
+    font-size: 2.7rem;
+}
+
+a {
+    color: var(--primary-color);
+}
