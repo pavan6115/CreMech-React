@@ -1,0 +1,93 @@
+
+.checkout__container {
+    max-width: 75em;
+    height: 100vh;
+    margin: auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.coupon__address__container {
+    width: 30em;
+}
+
+.coupon__container {
+    margin: 2rem 0rem;
+}
+
+.coupon__title {
+    margin: 1.5rem 0rem;
+}
+
+.btn {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.address__title {
+    margin: 1.5rem 0rem;
+}
+
+.add {
+    padding: 1rem 0rem;
+}
+
+.checkout__summary {
+    width: 30em;
+}
+
+.summary__heading {
+    margin: 2rem 0rem;
+}
+
+.summary__title {
+    margin: 1.5rem 0rem;
+}
+
+.order__summary {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.order {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #B5B5B5;
+}
+
+.order__details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem 0rem;
+    border-bottom: 2px solid #B5B5B5;
+}
+
+.total__price {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.place__order__pay__btn {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.pp__btn {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-btn-color);
+    font-size: 1.4rem;
+}
+
+.pp__btn:hover {
+    background-color: rgba(242, 134, 39, 0.726);
+}

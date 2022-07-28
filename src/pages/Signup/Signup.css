@@ -1,0 +1,109 @@
+.signup {
+    margin: 10rem 0rem;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup__illustration {
+    margin-top: 15rem;
+    height: 60%;
+    width: 100%;
+}
+
+.signup__container {
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+}
+
+.signup__heading {
+    width: 100%;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.signup__heading__title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 6rem;
+}
+
+.signup__heading__subtitle {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.signup__form__container {
+    margin-top: 5rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: #f1f5f9;
+    /* box-shadow: 0px 0px 65px -15px #B5B5B5 */
+    border: 3px solid var(--border-color);
+}
+
+.signup__button__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.username__container {
+    margin: 2rem 0rem;
+}
+
+.email__container {
+    margin: 2rem 0rem;
+}
+
+.email__inp {
+    padding-right: 1.3rem;
+}
+
+.password__container {
+    margin: 2rem 0rem;
+    position: relative;
+}
+
+.confirm__password__container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    color: var(--slight-gray);
+    top: 7px;
+    right: 3rem;
+    cursor: pointer;
+}
+
+.eye-icon:hover {
+    color: var(--primary-color);
+}
+
+.signup__btn {
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.signup__btn:hover {
+    background-color: rgb(242 134 39 / 79%);
+}
+
+.redirect__login {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.link__txt {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
