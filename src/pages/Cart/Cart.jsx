@@ -1,10 +1,6 @@
 import React from 'react'
 import './Cart.css'
 import { Link } from "react-router-dom"
-// import carBrushes from '../../assets/car-brushes.png'
-// import microFiberCloth from '../../assets/car-microfiber-cloth.png'
-// import carWashShampoo from '../../assets/car-wash-shampoo.png'
-// import engineOil2 from '../../assets/engine-oil-2.png'
 
 export function Cart() {
   return (
