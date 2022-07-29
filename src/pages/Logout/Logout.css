@@ -1,0 +1,58 @@
+.logout {
+    margin: 10rem 0rem;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logout__illustration {
+    margin-top: 15rem;
+    height: 60%;
+    width: 100%;
+}
+
+.logout__container {
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+}
+
+.logout__heading {
+    width: 100%;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.logout__heading__title {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 6rem;
+}
+
+.logout__heading__subtitle {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.logout__form__container {
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: #f1f5f9;
+    border: 3px solid var(--border-color);
+    text-align: center;
+}
+
+.approve {
+    font-size: 10rem;
+    color: rgb(131, 204, 22);
+}
+
+.redirect__login {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.link__txt {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
