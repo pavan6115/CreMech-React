@@ -1,9 +1,7 @@
 import React from 'react'
 import './WishList.css'
 import { Link } from 'react-router-dom'
-// import microFiberCloth from '../../assets/car-microfiber-cloth.png'
-// import engineOil2 from '../../assets/engine-oil-2.png'
-// import chassis from '../../assets/chassis.png'
+
 
 export function WishList() {
   return (
