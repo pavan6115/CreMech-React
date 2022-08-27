@@ -8,10 +8,15 @@ import {
   sortByRating,
   sortByCategory,
 } from '../../services/filterData'
+import { useWishlist } from '../../context/wishlist/wishlist-context'
 
 export function Products() {
   const { state, dispatch } = useData()
   const { cartState, dispatchCart } = useCart()
+  const {
+    wishListState: { wishlist },
+    dispatchWishList,
+  } = useWishlist()
 
   // filter services
   const sortCategoriesData = sortByCategory(
@@ -25,10 +30,18 @@ export function Products() {
 
   const ratingArray = [4, 3, 2, 1]
 
-
   // cart services
   const addToCart = (product) => {
-      dispatchCart({ type: "ADD_TO_CART", payload: product})
+    dispatchCart({ type: 'ADD_TO_CART', payload: product })
+  }
+
+  // wishlist services
+  const addToWishList = (prod) => {
+    dispatchWishList({ type: 'ADD_TO_WISHLIST', payload: prod })
+  }
+
+  const removeFromWishList = (prod) => {
+    dispatchWishList({ type: 'REMOVE_FROM_WISHLIST', payload: prod })
   }
 
   return (
@@ -118,7 +131,9 @@ export function Products() {
           <div className='content__heading'>
             <h2>
               Showing all categories{' '}
-              <span className='subtitle'>({state.products.length} products)</span>
+              <span className='subtitle'>
+                ({state.products.length} products)
+              </span>
             </h2>
           </div>
 
@@ -139,7 +154,22 @@ export function Products() {
                     <div className='card-heading'>
                       <h2>{card.productTitle}</h2>
                     </div>
-                    <span className='material-icons-outlined like'>
+                    <span
+                      className='material-icons-outlined'
+                      style={{
+                        color: wishlist.some((prod) => prod._id === card._id)
+                          ? '#f28627'
+                          : 'black',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => {
+                        if (wishlist.some((prod) => prod._id === card._id)) {
+                          removeFromWishList(card)
+                        } else {
+                          addToWishList(card)
+                        }
+                      }}
+                    >
                       favorite
                     </span>
                   </div>
@@ -149,36 +179,28 @@ export function Products() {
                       {' '}
                       ₹{card.discountedPrice}{' '}
                     </div>
-                    <div className='actual-pricing'> 
-                      ₹{card.actualPrice} 
-                    </div>
+                    <div className='actual-pricing'>₹{card.actualPrice}</div>
                     <div className='discount-percentange'>
                       {' '}
                       ({card.discountPercentage}% OFF){' '}
                     </div>
                   </div>
-                  {
-                    cartState.cart.some((prod) => prod._id === card._id) ? 
-                    (
-                      <Link to='/cart'>
-                        <div className='add-cart-btn'>
-                            <button className='go-to-cart'>
-                              Go to Cart
-                            </button>
-                        </div>
-                      </Link>
-                    ) :
-                    (
+                  {cartState.cart.some((prod) => prod._id === card._id) ? (
+                    <Link to='/cart'>
                       <div className='add-cart-btn'>
-                        <button 
+                        <button className='go-to-cart'>Go to Cart</button>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className='add-cart-btn'>
+                      <button
                         className='add-to-cart'
                         onClick={() => addToCart(card)}
-                        >
-                          Add to Cart
-                        </button>
-                      </div>
-                    )
-                  }
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
