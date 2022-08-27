@@ -1,25 +1,27 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { makeServer } from "./server";
-import { BrowserRouter as Router } from "react-router-dom";
-import { DataProvider } from "./context/data/data-context";
-import { CartProvider } from "./context/cart/cart-context";
-
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import { makeServer } from './server'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { DataProvider } from './context/data/data-context'
+import { CartProvider } from './context/cart/cart-context'
+import { WishListProvider } from './context/wishlist/wishlist-context'
 
 // Call make Server
-makeServer();
+makeServer()
 
 ReactDOM.render(
   <React.StrictMode>
-      <CartProvider>
+    <CartProvider>
+      <WishListProvider>
         <DataProvider>
           <Router>
-              <App />
+            <App />
           </Router>
         </DataProvider>
-      </CartProvider>
+      </WishListProvider>
+    </CartProvider>
   </React.StrictMode>,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
