@@ -14,11 +14,9 @@ const DataProvider = ({ children }) => {
                 try {
                     const data = await axios.get('/api/products')
                     dispatch({ type : "INITPRODUCTS", payload: data.data.products})
-                    // console.log(data)
 
                     const resp = await axios.get('/api/categories')
                     dispatch({ type: "INITCATEGORY", payload: resp.data.categories})
-                    // console.log(resp.data.categories)
                 }
                 catch(e) {
                     console.log('Error -> ', e)

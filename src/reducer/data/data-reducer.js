@@ -42,9 +42,6 @@ const dataReducer = (state, action) => {
             };
 
         case "CATEGORIES":
-            // console.log('hello -', state.categories)
-            // console.log('cat check ',state.categories.map((item) => action.payload === item.categoryName ? console.log('item - ',item) : console.log('else part ',item.categoryName, action.payload)))
-            // console.log(action.payload)
             return {
                 ...state,
                 categories: state.categories.map((item) => action.payload === item.categoryName ? {...item, isChecked: !item.isChecked } : item)

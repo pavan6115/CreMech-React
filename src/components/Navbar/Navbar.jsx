@@ -1,8 +1,13 @@
 import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../context/cart/cart-context'
+
 
 export function Navbar() {
+
+    const { cartState: { cart }} = useCart()
+
   return (
     <header className="header">
         <nav className="nav__container">
@@ -33,6 +38,7 @@ export function Navbar() {
                 <Link to="/cart">
                     <span className="material-icons-outlined nav__icon"> 
                         shopping_cart 
+                    <span className='notification-count'>{cart.length}</span>
                     </span>
                 </Link>
             </div>
