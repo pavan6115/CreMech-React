@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import './Products.css'
 import { useData } from '../../context/data/data-context'
+import { useCart } from '../../context/cart/cart-context'
 import {
   sortByPrice,
   sortByRating,
@@ -9,8 +11,9 @@ import {
 
 export function Products() {
   const { state, dispatch } = useData()
-  // const [ check, setCheck ] = useState(false)
+  const { cartState, dispatchCart } = useCart()
 
+  // filter services
   const sortCategoriesData = sortByCategory(
     [...state.products],
     state.categories
@@ -20,10 +23,13 @@ export function Products() {
 
   const sortRatingData = sortByRating(sortData, state.sortByRating)
 
-  // console.log('updated categories - ',state.categories)
-
   const ratingArray = [4, 3, 2, 1]
-  // console.log('categories ', state.categories)
+
+
+  // cart services
+  const addToCart = (product) => {
+      dispatchCart({ type: "ADD_TO_CART", payload: product})
+  }
 
   return (
     <div>
@@ -122,7 +128,7 @@ export function Products() {
                 <div className='card__img-container'>
                   <img
                     src={card.productImage}
-                    alt='car brushes'
+                    alt={card.productTitle}
                     className='card__img'
                   />
                   <span className='card__img-badge'>{card.productRating}</span>
@@ -132,7 +138,6 @@ export function Products() {
                   <div className='heading-like'>
                     <div className='card-heading'>
                       <h2>{card.productTitle}</h2>
-                      {/* <p> {card.productDescription} </p> */}
                     </div>
                     <span className='material-icons-outlined like'>
                       favorite
@@ -144,18 +149,36 @@ export function Products() {
                       {' '}
                       ₹{card.discountedPrice}{' '}
                     </div>
-                    <div className='actual-pricing'> ₹{card.actualPrice} </div>
+                    <div className='actual-pricing'> 
+                      ₹{card.actualPrice} 
+                    </div>
                     <div className='discount-percentange'>
                       {' '}
                       ({card.discountPercentage}% OFF){' '}
                     </div>
                   </div>
-
-                  <div className='add-cart-btn'>
-                    <button className='add-to-cart'>
-                      Add to Cart
-                    </button>
-                  </div>
+                  {
+                    cartState.cart.some((prod) => prod._id === card._id) ? 
+                    (
+                      <Link to='/cart'>
+                        <div className='add-cart-btn'>
+                            <button className='go-to-cart'>
+                              Go to Cart
+                            </button>
+                        </div>
+                      </Link>
+                    ) :
+                    (
+                      <div className='add-cart-btn'>
+                        <button 
+                        className='add-to-cart'
+                        onClick={() => addToCart(card)}
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    )
+                  }
                 </div>
               </div>
             ))}
