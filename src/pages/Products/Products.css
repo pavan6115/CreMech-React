@@ -214,6 +214,19 @@ article {
   border-radius: 8px;
   cursor: pointer;
   font-size: 1.8rem;
+  font-weight: 700;
+  width: 100%;
+}
+
+.go-to-cart {
+  padding: 5px 15px;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 700;
   width: 100%;
 }
 
