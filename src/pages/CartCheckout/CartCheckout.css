@@ -24,6 +24,7 @@
     font-size: 1.2rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 
@@ -32,7 +33,13 @@
 }
 
 .add {
-    padding: 1rem 0rem;
+    padding: 1rem;
+    margin: 1rem 0rem;
+    transition: all ease-in-out 400ms;
+    background: none;
+    box-shadow: 0px 0px 30px -5px #c4c4c4;
+    padding: 1.5rem;
+    margin-top: 4rem;
 }
 
 .checkout__summary {
@@ -47,9 +54,7 @@
     margin: 1.5rem 0rem;
 }
 
-.order__summary {
-    display: flex;
-    flex-direction: column;
+.title__heading {
     font-size: 2rem;
 }
 
@@ -86,8 +91,49 @@
     cursor: pointer;
     background-color: var(--primary-btn-color);
     font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .pp__btn:hover {
     background-color: rgba(242, 134, 39, 0.726);
+}
+
+/* new css */
+.summary__heading{
+    transition: all ease-in-out 400ms;
+    background: none;
+    box-shadow: 0px 0px 50px -5px #c4c4c4;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+.heading{
+    text-align: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin: 1rem 0rem;
+    padding: .4rem 0rem;
+}
+
+.item__qty__details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+
+.item__qty{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.size{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.total__qty{
+    font-weight: 800;
 }
