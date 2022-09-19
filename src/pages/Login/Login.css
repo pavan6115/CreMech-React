@@ -51,7 +51,7 @@
 .eye-icon {
     position: absolute;
     color: var(--slight-gray);
-    top: 7px;
+    top: 10px;
     right: 3rem;
     cursor: pointer;
 }
