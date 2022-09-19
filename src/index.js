@@ -1,27 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import { makeServer } from './server'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { DataProvider } from './context/data/data-context'
+import App from './App'
+import { AuthProvider } from './context/auth/auth-context'
 import { CartProvider } from './context/cart/cart-context'
+import { DataProvider } from './context/data/data-context'
 import { WishListProvider } from './context/wishlist/wishlist-context'
+import './index.css'
+import { makeServer } from './server'
 
 // Call make Server
 makeServer()
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartProvider>
-      <WishListProvider>
-        <DataProvider>
-          <Router>
-            <App />
-          </Router>
-        </DataProvider>
-      </WishListProvider>
-    </CartProvider>
+    <Router>
+      <AuthProvider>
+        <CartProvider>
+          <WishListProvider>
+            <DataProvider>
+              <App />
+            </DataProvider>
+          </WishListProvider>
+        </CartProvider>
+      </AuthProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 )
