@@ -1,18 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Link, Routes, Route } from 'react-router-dom'
 import { Navbar } from './components/Navbar/Navbar'
-import { 
+import { RequireAuth } from './components/PrivateRoute/RequireAuth'
+import {
+  Cart,
+  CartCheckout,
   Home,
-  Products,
-  Signup,
   Login,
   Logout,
-  ForgotPassword,
-  Cart,
+  Products,
+  Signup,
   WishList,
-  CartCheckout
 } from './pages'
-
 
 function App() {
   return (
@@ -24,10 +23,30 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/logout' element={<Logout />}></Route>
-        <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/wishlist" element={<WishList />}></Route>
-        <Route path="/cartcheckout" element={<CartCheckout />}></Route>
+        <Route
+          path='/cart'
+          element={
+            <RequireAuth>
+              <Cart />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path='/wishlist'
+          element={
+            <RequireAuth>
+              <WishList />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path='/cartcheckout'
+          element={
+            <RequireAuth>
+              <CartCheckout />
+            </RequireAuth>
+          }
+        ></Route>
       </Routes>
     </div>
   )

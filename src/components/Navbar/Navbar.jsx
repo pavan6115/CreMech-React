@@ -1,8 +1,9 @@
 import React from 'react'
-import './Navbar.css'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../../context/auth/auth-context'
 import { useCart } from '../../context/cart/cart-context'
 import { useWishlist } from '../../context/wishlist/wishlist-context'
+import './Navbar.css'
 
 export function Navbar() {
   const {
@@ -11,6 +12,10 @@ export function Navbar() {
   const {
     wishListState: { wishlist },
   } = useWishlist()
+  const {
+    user: { token },
+    logout,
+  } = useAuth()
 
   return (
     <header className='header'>
@@ -25,21 +30,33 @@ export function Navbar() {
             person_outline
           </span>
 
-          <Link to='/login'>
-            <span className='material-icons-outlined nav__icon'>login</span>
-          </Link>
+          {token ? (
+            <Link to='/logout'>
+              <span 
+              onClick={() => logout()}
+              className='material-icons-outlined nav__icon'>logout</span>
+            </Link>
+          ) : (
+            <Link to='/login'>
+              <span className='material-icons-outlined nav__icon'>login</span>
+            </Link>
+          )}
 
           <Link to='/wishlist'>
             <span className='material-icons-outlined nav__icon'>
               favorite_border
-              <span className='notification-count'>{wishlist.length}</span>
+              {token ? (
+                <span className='notification-count'>{wishlist.length}</span>
+              ) : null}
             </span>
           </Link>
 
           <Link to='/cart'>
             <span className='material-icons-outlined nav__icon'>
               shopping_cart
-              <span className='notification-count'>{cart.length}</span>
+              {token ? (
+                <span className='notification-count'>{cart.length}</span>
+              ) : null}
             </span>
           </Link>
         </div>

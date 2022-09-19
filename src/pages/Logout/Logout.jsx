@@ -1,31 +1,44 @@
-import React from 'react'
-import './Logout.css'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import LogoutImg from '../../assets/logout-img.svg'
+import './Logout.css'
 
 export function Logout() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigate('/')
+    }, 2500)
+  }, [])
+
   return (
     <div>
-      <section class='logout'>
-        <div class='illustration__container'>
-          <img src={LogoutImg} alt='logout-svg' class='logout__illustration' />
+      <section className='logout'>
+        <div className='illustration__container'>
+          <img
+            src={LogoutImg}
+            alt='logout-svg'
+            className='logout__illustration'
+          />
         </div>
 
-        <div class='logout__container'>
-          <div class='logout__heading'>
-            <h1 class='logout__heading__title'>Logout</h1>
-            <span class='logout__heading__subtitle'>PAGE</span>
+        <div className='logout__container'>
+          <div className='logout__heading'>
+            <h1 className='logout__heading__title'>Logout</h1>
+            <span className='logout__heading__subtitle'>PAGE</span>
           </div>
 
-          <div class='logout__form__container'>
-            <span class='material-icons-outlined approve'>task_alt</span>
+          <div className='logout__form__container'>
+            <span className='material-icons-outlined approve'>task_alt</span>
 
             <h2>Logout Successful</h2>
 
-            <div class='redirect__login'>
-              <button class='btn btn-link'>
-                <a href='../login-page/login.html' class='btn-link link__txt'>
+            <div className='redirect__login'>
+              <button className='btn btn-link'>
+                <Link to='/login' className='btn-link link__txt'>
                   Login Again
-                </a>
+                </Link>
               </button>
             </div>
           </div>

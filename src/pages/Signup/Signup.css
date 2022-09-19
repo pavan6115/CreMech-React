@@ -107,3 +107,7 @@
     font-size: 1.3rem;
     color: var(--secondary-color);
 }
+
+.txt-input {
+    font-size: 1.6rem;
+}
