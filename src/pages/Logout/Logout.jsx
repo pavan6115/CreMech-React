@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import LogoutImg from '../../assets/logout-img.svg'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
 import './Logout.css'
 
 export function Logout() {
@@ -11,6 +12,8 @@ export function Logout() {
       navigate('/')
     }, 2500)
   }, [])
+
+  PageTitle(`Logout | CreMech`)
 
   return (
     <div>
