@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import { Navbar } from './components/Navbar/Navbar'
@@ -8,6 +9,7 @@ import {
   Home,
   Login,
   Logout,
+  PageNotFound,
   Products,
   Signup,
   WishList,
@@ -23,6 +25,7 @@ function App() {
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/logout' element={<Logout />}></Route>
+        <Route path='*' element={<PageNotFound />}></Route>
         <Route
           path='/cart'
           element={
@@ -48,6 +51,7 @@ function App() {
           }
         ></Route>
       </Routes>
+      <Toaster />
     </div>
   )
 }
