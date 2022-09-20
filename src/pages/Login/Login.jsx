@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import LoginImg from '../../assets/login-img.svg'
-import { useAuth } from '../../context/auth/auth-context'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { useAuth } from '../../context/index'
 import './Login.css'
+
+// toast functions
+const toastLoginUser = () => toast.success('Login Successful')
 
 export function Login() {
   const { login } = useAuth()
@@ -25,7 +30,10 @@ export function Login() {
   const handleGuestLogin = (e) => {
     e.preventDefault()
     login('pk@gmail.com', 'pavankulkarni')
+    toastLoginUser()
   }
+
+  PageTitle(`Login | CreMech`)
 
   return (
     <div>
