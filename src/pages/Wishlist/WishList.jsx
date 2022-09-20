@@ -1,9 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { useCart, useWishlist } from '../../context/index'
 import '../Products/Products.css'
 import './WishList.css'
-import { Link } from 'react-router-dom'
-import { useWishlist } from '../../context/wishlist/wishlist-context'
-import { useCart } from '../../context/cart/cart-context'
+import { toast } from 'react-hot-toast';
+
+// toast functions
+const toastMoveToCart = () => toast.success('Moved to Cart 🛒')
 
 export function WishList() {
   const {
@@ -26,7 +30,10 @@ export function WishList() {
 
   const addToCart = (product) => {
     dispatchCart({ type: 'ADD_TO_CART', payload: product })
+    toastMoveToCart()
   }
+
+  PageTitle(`Wishlist | CreMech`)
 
   return (
     <div>
