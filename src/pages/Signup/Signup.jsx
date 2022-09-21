@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SignupImg from '../../assets/signup-img.svg'
-import { useAuth } from '../../context/auth/auth-context'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { useAuth } from '../../context/index'
 import './Signup.css'
 
 export function Signup() {
@@ -23,6 +24,8 @@ export function Signup() {
       ? setPasswordType('text')
       : setPasswordType('password')
   }
+
+  PageTitle(`Signup | CreMech`)
 
   return (
     <div>

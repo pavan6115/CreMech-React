@@ -1,14 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import './Products.css'
-import { useData } from '../../context/data/data-context'
-import { useCart } from '../../context/cart/cart-context'
+import toast from 'react-hot-toast'
+import { Link, useNavigate } from 'react-router-dom'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { useAuth, useCart, useData, useWishlist } from '../../context/index'
 import {
+  sortByCategory,
   sortByPrice,
   sortByRating,
-  sortByCategory,
 } from '../../services/filterData'
-import { useWishlist } from '../../context/wishlist/wishlist-context'
+import './Products.css'
+
+// toast functions
+const toastAddToCart = () => toast.success('Added to Cart 🛒')
+const toastAddToWishList = () => toast.success('Added to Wishlist 🧡')
+const toastRemoveFromWishlist = () => toast.success('Removed from Wishlist 🧡')
 
 export function Products() {
   const { state, dispatch } = useData()
@@ -17,6 +22,11 @@ export function Products() {
     wishListState: { wishlist },
     dispatchWishList,
   } = useWishlist()
+  const {
+    user: { token },
+  } = useAuth()
+
+  const navigate = useNavigate()
 
   // filter services
   const sortCategoriesData = sortByCategory(
@@ -25,24 +35,35 @@ export function Products() {
   )
 
   const sortData = sortByPrice(sortCategoriesData, state.sortByPrice)
-
   const sortRatingData = sortByRating(sortData, state.sortByRating)
-
   const ratingArray = [4, 3, 2, 1]
 
   // cart services
   const addToCart = (product) => {
-    dispatchCart({ type: 'ADD_TO_CART', payload: product })
+    if (token) {
+      dispatchCart({ type: 'ADD_TO_CART', payload: product })
+      toastAddToCart()
+    } else {
+      navigate('/login')
+    }
   }
 
   // wishlist services
   const addToWishList = (prod) => {
-    dispatchWishList({ type: 'ADD_TO_WISHLIST', payload: prod })
+    if (token) {
+      dispatchWishList({ type: 'ADD_TO_WISHLIST', payload: prod })
+      toastAddToWishList()
+    } else {
+      navigate('/login')
+    }
   }
 
   const removeFromWishList = (prod) => {
     dispatchWishList({ type: 'REMOVE_FROM_WISHLIST', payload: prod })
+    toastRemoveFromWishlist()
   }
+
+  PageTitle(`Products | CreMech`)
 
   return (
     <div>

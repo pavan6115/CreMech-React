@@ -1,0 +1,36 @@
+.error_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.error_h1 {
+  font-size: 7rem;
+  font-weight: 700;
+}
+
+.error_p {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.btn_homepage {
+  background-color: #f28627;
+  padding: 10px 15px;
+  margin-top: 3.5rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.btn_homepage:hover {
+  background-color: #f28627d9;
+}
+
+.error_img {
+  width: 40%;
+}

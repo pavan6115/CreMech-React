@@ -1,18 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Home.css'
-import engineOil from '../../assets/engine-oil.png'
 import drillBrushSoft from '../../assets/brushes/drill brush(soft).png'
-import shampooDgBig from '../../assets/washWax/wash-carShampoo_big.png'
 import ultraPlushTowel from '../../assets/clothTowel/ultraPlushTowel.png'
-import foamCannon from '../../assets/washerCannon/foamgun.png'
-import kitShinePro from '../../assets/kits/shineproWashKit.png'
-import coolantShell from '../../assets/fluidsOil/shell_coolant.png'
+import engineOil from '../../assets/engine-oil.png'
 import washerFluidRainx from '../../assets/fluidsOil/rainx_washerFluid.png'
+import coolantShell from '../../assets/fluidsOil/shell_coolant.png'
 import brakeFluidVW from '../../assets/fluidsOil/vw_brakeFluid.png'
-
+import kitShinePro from '../../assets/kits/shineproWashKit.png'
+import foamCannon from '../../assets/washerCannon/foamgun.png'
+import shampooDgBig from '../../assets/washWax/wash-carShampoo_big.png'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import './Home.css'
 
 export function Home() {
+  PageTitle(`CreMech - Deep Clean your Automotives`)
+
   return (
     <div>
       <section className='content'>
@@ -40,9 +42,7 @@ export function Home() {
       <section className='explore__more'>
         <div>
           <Link to='/products'>
-            <a className='view__prod__btn'>
-                View All Products
-            </a>
+            <a className='view__prod__btn'>View All Products</a>
           </Link>
         </div>
 
@@ -57,7 +57,6 @@ export function Home() {
       </section>
 
       <section class='product__categories' id='prod_cat'>
-
         <div class='vproduct__card'>
           <div class='vproduct__img__container'>
             <img src={engineOil} alt='' class='img__engineoil' />
@@ -183,7 +182,6 @@ export function Home() {
             </Link>
           </div>
         </div>
-
       </section>
     </div>
   )

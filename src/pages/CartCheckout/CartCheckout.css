@@ -1,139 +1,141 @@
-
 .checkout__container {
-    max-width: 75em;
-    height: 100vh;
-    margin: auto;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-around;
+  max-width: 75em;
+  height: 100vh;
+  margin: auto;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 .coupon__address__container {
-    width: 30em;
+  width: 30em;
 }
 
 .coupon__container {
-    margin: 2rem 0rem;
+  margin: 2rem 0rem;
 }
 
 .coupon__title {
-    margin: 1.5rem 0rem;
+  margin: 1.5rem 0rem;
 }
 
 .btn {
-    font-size: 1.2rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-
 .address__title {
-    margin: 1.5rem 0rem;
+  margin: 1.5rem 0rem;
 }
 
 .add {
-    padding: 1rem;
-    margin: 1rem 0rem;
-    transition: all ease-in-out 400ms;
-    background: none;
-    box-shadow: 0px 0px 30px -5px #c4c4c4;
-    padding: 1.5rem;
-    margin-top: 4rem;
+  padding: 1rem;
+  margin: 1rem 0rem;
+  transition: all ease-in-out 400ms;
+  background: none;
+  box-shadow: 0px 0px 30px -5px #c4c4c4;
+  padding: 1.5rem;
+  margin-top: 4rem;
 }
 
 .checkout__summary {
-    width: 30em;
+  width: 30em;
 }
 
 .summary__heading {
-    margin: 2rem 0rem;
+  margin: 2rem 0rem;
 }
 
 .summary__title {
-    margin: 1.5rem 0rem;
+  margin: 1.5rem 0rem;
 }
 
 .title__heading {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .order {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 2px solid #B5B5B5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #b5b5b5;
 }
 
 .order__details {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: .5rem 0rem;
-    border-bottom: 2px solid #B5B5B5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  border-bottom: 2px solid #b5b5b5;
 }
 
 .total__price {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .place__order__pay__btn {
-    margin-top: 2rem;
-    text-align: center;
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .pp__btn {
-    padding: 1rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: var(--primary-btn-color);
-    font-size: 1.4rem;
-    font-weight: 700;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--primary-btn-color);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .pp__btn:hover {
-    background-color: rgba(242, 134, 39, 0.726);
+  background-color: rgba(242, 134, 39, 0.726);
+}
+
+.pp__btn {
+  background-color: var(--primary-btn-color) !important;
 }
 
 /* new css */
-.summary__heading{
-    transition: all ease-in-out 400ms;
-    background: none;
-    box-shadow: 0px 0px 50px -5px #c4c4c4;
-    padding: 1.5rem;
-    margin-top: 3rem;
+.summary__heading {
+  transition: all ease-in-out 400ms;
+  background: none;
+  box-shadow: 0px 0px 50px -5px #c4c4c4;
+  padding: 1.5rem;
+  margin-top: 3rem;
 }
 
-.heading{
-    text-align: center;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-    margin: 1rem 0rem;
-    padding: .4rem 0rem;
+.heading {
+  text-align: center;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin: 1rem 0rem;
+  padding: 0.4rem 0rem;
 }
 
-.item__qty__details{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: .5rem;
-    font-weight: 700;
+.item__qty__details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.item__qty{
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.7rem;
-    font-weight: 600;
+.item__qty {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
-.size{
-    font-size: 1.7rem;
-    font-weight: 600;
+.size {
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
-.total__qty{
-    font-weight: 800;
+.total__qty {
+  font-weight: 800;
 }

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { createContext, useContext, useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { useLocation, useNavigate } from 'react-router-dom'
 const AuthContext = createContext()
 
@@ -36,6 +37,7 @@ const AuthProvider = ({ children }) => {
         navigate(location.state?.from?.pathname || '/', { replace: true })
       }
     } catch (e) {
+      toast.error('Something is wrong. Please try again!')
       console.log('Login error - ', e)
     }
   }

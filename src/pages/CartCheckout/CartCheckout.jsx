@@ -1,6 +1,11 @@
 import React from 'react'
+import { toast } from 'react-hot-toast'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { useCart } from '../../context/index'
 import './CartCheckout.css'
-import { useCart } from '../../context/cart/cart-context'
+
+// toast functions
+const toastPlaceOrder = () => toast.success('Order Placed 🛍')
 
 export function CartCheckout() {
   const {
@@ -15,6 +20,8 @@ export function CartCheckout() {
   )
 
   const getTotalDiscountedPrice = getTotalActualPrice - cartTotal
+
+  PageTitle(`Checkout | CreMech`)
 
   return (
     <div>
@@ -36,33 +43,34 @@ export function CartCheckout() {
             <div class='addresses'>
               <article className='add'>
                 <label>
-                <input
-                  type='radio'
-                  name='address'
-                  id='add-1'
-                  class='radio-inp'
-                />
-                <span className='size'>Pavan Kulkarni</span>
-                <h5>
-                    222C, 4th Main, D Block, Baker Street, Mumbai - 400001, India
-                </h5>
-                <h5>Phone Number: 9090905566</h5>
+                  <input
+                    type='radio'
+                    name='address'
+                    id='add-1'
+                    class='radio-inp'
+                  />
+                  <span className='size'>Pavan Kulkarni</span>
+                  <h5>
+                    222C, 4th Main, D Block, Baker Street, Mumbai - 400001,
+                    India
+                  </h5>
+                  <h5>Phone Number: 9090905566</h5>
                 </label>
               </article>
               <article className='add'>
                 <label>
-                <input
-                  type='radio'
-                  name='address'
-                  id='add-1'
-                  class='radio-inp'
-                  checked='true'
-                />
-                <span className='size'>Adarsh Balika</span>
-                <h5>
+                  <input
+                    type='radio'
+                    name='address'
+                    id='add-1'
+                    class='radio-inp'
+                    checked='true'
+                  />
+                  <span className='size'>Adarsh Balika</span>
+                  <h5>
                     A-101, Osho Kabir, Navnagar, Sec-2, Banglore - 560004, India
-                </h5>
-                <h5>Phone Number: 9990082233</h5>
+                  </h5>
+                  <h5>Phone Number: 9990082233</h5>
                 </label>
               </article>
             </div>
@@ -113,17 +121,18 @@ export function CartCheckout() {
               <h4 className='heading'>DELIVER TO</h4>
               <article>
                 <label>
-                <span className='size'>Adarsh Balika</span>
-                <h5>
-                    A-101, Osho Kabir, Navnagar, Sec-2, Banglore - 560004
-                </h5>
-                <h5>Phone Number: 9990082233</h5>
+                  <span className='size'>Adarsh Balika</span>
+                  <h5>A-101, Osho Kabir, Navnagar, Sec-2, Banglore - 560004</h5>
+                  <h5>Phone Number: 9990082233</h5>
                 </label>
               </article>
             </div>
 
             <div class='place__order__pay__btn'>
-              <button class='btn btn-std-primary pp__btn'>
+              <button
+                class='btn btn-std-primary pp__btn'
+                onClick={toastPlaceOrder}
+              >
                 Place Order and Pay
               </button>
             </div>

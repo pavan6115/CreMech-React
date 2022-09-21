@@ -1,7 +1,12 @@
 import React from 'react'
-import './Cart.css'
+import { toast } from 'react-hot-toast'
 import { Link } from 'react-router-dom'
-import { useCart } from '../../context/cart/cart-context'
+import { useCart } from '../../context/index'
+import './Cart.css'
+import { PageTitle } from '../../components/PageTitle/PageTitle';
+
+// toast functions
+const toastRemoveFromCart = () => toast.success('Removed from Cart 🛒')
 
 export function Cart() {
   const {
@@ -12,6 +17,7 @@ export function Cart() {
   // cart services
   const removeFromCart = (prod) => {
     dispatchCart({ type: 'REMOVE_FROM_CART', payload: prod })
+    toastRemoveFromCart()
   }
 
   const increaseCartItemQty = (prod) => {
@@ -25,6 +31,8 @@ export function Cart() {
   const clearCart = () => {
     dispatchCart({ type: 'CLEAR_CART' })
   }
+
+  PageTitle(`Cart | CreMech`)
 
   return (
     <div>
